@@ -1,16 +1,7 @@
 
 function cout(varargin)
 
-str = '';
+% Prints passed argument list to a MATLAB console. For more information on
+% supported types and implementation details, see str() function.
 
-for i = 1 : size(varargin, 2)
-    val = varargin{i};
-    
-    if (ischar(val))
-        str = [str val];
-    else
-        str = [str num2str(val)];
-    end
-end
-
-disp(str);
+disp(str(varargin{:}));
