@@ -9,7 +9,7 @@
 %   values: [1 x N] array of numbers.
 %
 % Example.
-%   GetRandomVector(10, 3) returns [v1 v2 ... vi ... v10], -3 <= vi <= 3.
+%   random_array(10, 3) returns [v1 v2 ... vi ... v10], -3 <= vi <= 3.
 function [values] = random_array(size, max_value)
 
   values = rand([1 size]);      % Generate random values from 0 to 1.
