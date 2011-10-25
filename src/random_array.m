@@ -3,17 +3,17 @@
 % [-max, max].
 %
 % Inputs.
-%   size: Size of the vector.
-%   max_value: Values will lie between -max_value amd max_value.
+%   size:       Size of the vector.
+%   max_value:  Values will lie between -max_value amd max_value.
 %
 % Outputs.
-%   values: [1 x N] array of numbers.
+%   values:     [1 x N] array of numbers.
 %
 % Example.
 %   random_array(10, 3) returns [v1 v2 ... vi ... v10], -3 <= vi <= 3.
 %
-%  Copyright (c) 2011 Alena Bakulina <alena.bakulina@ziti.uni-heidelberg.de>
-%  All rights reserved.
+% Copyright (c) 2011 Alena Bakulina <alena.bakulina@ziti.uni-heidelberg.de>
+% All rights reserved.
 
 function [values] = random_array(size, max_value)
 
