@@ -1,6 +1,11 @@
+
 % Converts and concatenates to a single string passed arguments. Supports
 % arbitrary quantity of arguments. The argument is supposed to be either a
 % string (char) or a number. Other (incl. custom) types are not supported.
+%
+% Copyright (c) 2011 Alexander Rukletsov <rukletsov@gmail.com>
+% All rights reserved.
+
 function [string] = str(varargin)
 
   string = '';
