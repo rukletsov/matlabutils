@@ -34,7 +34,7 @@ function Ker = GaussianKernels2D(sigma, type)
     case 'xx'
       Ker = ((x.^2 - sigma^2) / (2.5*sigma^5)) .* exp(-(x.^2 + y.^2) / (2*sigma^2));
     case {'xy','yx'}
-      Ker = ((x .* y) / (2.5*sigma^5))         .* exp(-(x.^2 + y.^2) / (2*sigma^2));
+      Ker = ((x .* y)         / (2.5*sigma^5)) .* exp(-(x.^2 + y.^2) / (2*sigma^2));
     case 'yy'
       Ker = ((y.^2 - sigma^2) / (2.5*sigma^5)) .* exp(-(x.^2 + y.^2) / (2*sigma^2));
   end
