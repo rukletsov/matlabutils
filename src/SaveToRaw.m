@@ -2,10 +2,6 @@
 % Saves the provided array into as a raw image.
 %
 % Inputs.
-%   sigma:  Gaussian sigma.
-%   type:   Indicates which derivative to take. Can be one from {'0', 'x',
-%           'y', 'xx', 'xy', 'yy'}. Value '0' means standard gaussian, no
-%           derivative is taken.
 %   image:  2D or 3D array containing image data.
 %   path:   Path to the output file.
 %   transp: Whether transpose image before saving. Can be either true or
