@@ -1,5 +1,6 @@
 [patterns]
 **.cpp = native
+**.cxx = native
 **.cc = native
 **.c = native
 **.h = native
@@ -8,6 +9,10 @@
 **.pl = native
 **.py = native
 **.txt = native
+**.ui = native
+**.md = native
+**.rc = native
+**.el = native
 **.m = native
 
 .hgignore = native
@@ -16,3 +21,14 @@
 
 **.vcproj = CRLF
 **.sln = CRLF
+**.cmd = CRLF
+**.bat = CRLF
+
+**.sh = LF
+
+**.pdf = BIN
+**.odt = BIN
+**.doc = BIN
+**.jpg = BIN
+**.png = BIN
+**.bmp = BIN
