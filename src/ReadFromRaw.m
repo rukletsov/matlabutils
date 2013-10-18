@@ -9,6 +9,7 @@
 %                 {'uint8', 'uint16', 'uint32', 'uint64'}.
 %   endianness:   Endianness of the raw formar. Can be either 'l' or 'b',
 %                 which stands for little-endian and big-endian respectively.
+%
 % Outputs.
 %   image:        2D or 3D array of doubles containing image intensities.
 %

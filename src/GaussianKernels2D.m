@@ -6,6 +6,7 @@
 %   type:   Indicates which derivative to take. Can be one from {'0', 'x',
 %           'y', 'xx', 'xy', 'yy'}. Value '0' means standard gaussian, no
 %           derivative is taken.
+%
 % Outputs.
 %   Ker:    Requested kernel.
 %
