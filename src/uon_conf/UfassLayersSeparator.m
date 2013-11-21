@@ -7,10 +7,10 @@
 
 function UfassLayersSeparator()
   % Add path to the 'MatlabUtils' folder and it's 'uon_conf' subfolder hier:
-  addpath('/home/lena/Lena/Matlab projects/MatlabUtils/src');
-  addpath('/home/lena/Lena/Matlab projects/MatlabUtils/src/uon_conf');
+  addpath('path-to-MatlabUtils-lib');
+  addpath('path-to-MatlabUtils-lib-uon_conf');
   
-  input_dir_name = 'data';
+  input_dir_name = 'input';
   output_dir_name = 'output';
   
   % Read images and correspondent .conf files. Tranformation matrices from .conf will
@@ -68,7 +68,7 @@ function UfassLayersSeparator()
   % Output by layers.
   for (ind = 1 : layers_count)
     % Set a break on this line to see step-by-step how the layers are built.
-    plot3(layers{ind}(1, :), layers{ind}(2, :), layers{ind}(3, :), 'r'), ... 
+    plot3(layers{ind}(1, :), layers{ind}(2, :), layers{ind}(3, :), 'r.', 'MarkerSize', 1), ... 
       axis equal, grid on, hold on;
     
     WritePly(fullfile(output_dir_name, sprintf('%04d.ply', ind)), layers{ind}(1 : 3, :));
@@ -110,12 +110,11 @@ function WritePly(file_path, points)
         fwrite(fin, str);
       end      
     else
-      disp('write_ply error: points array must be a [3 x N] or a [N x 3] matrix.');
+      cout('WritePly error: points array must be a [3 x N] or a [N x 3] matrix.');
     end
     
     fclose(fin);
   else
-    disp('write_ply error: file can not be opened for writing.');
+    cout('WritePly error: file can not be opened for writing.');
   end
 %end
-
