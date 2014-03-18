@@ -12,7 +12,7 @@
 % Example.
 %   SegmentInteractive2D('input-img.bmp', 'result-img.bmp', [0.5 0.7]) queries user
 %   for two contours, sets the brightness of the region enclosed by the first contour 
-%   to 0.5, by the second ? to 0.7, and saves the result image.
+%   to 0.5, by the second - to 0.7, and saves the result image.
 %
 % Copyright (c) 2014 Alexander Rukletsov <rukletsov@gmail.com>
 % Copyright (c) 2010 Dirk-Jan Kroon 
