@@ -4,7 +4,8 @@
 % Inputs.
 %   impath:               Path to the input file.
 %   options:              A struct with options defining image read algorithm and its
-%                         parameters. See below for available options.
+%                         parameters. See below for available options and also 
+%                         ReadImageDefaultOptions().
 %
 % Outputs.
 %   image:                Depending on specified parameters, can be a 2D or 3D array of
@@ -43,7 +44,7 @@
 function image = ReadImage(impath, options)
 
   % Process input options.
-  default_options = get_default_options();
+  default_options = ReadImageDefaultOptions();
    
   if(~exist('options','var')), 
     options = default_options;
@@ -80,16 +81,3 @@ function image = ReadImage(impath, options)
   end
 
 % end ReadImage()
-
-
-function default_options = get_default_options()
-  
-  default_options = struct(...
-    'format', 'std', ...
-    'size', [512 512], ...
-    'format_spec', 'uint16', ...
-    'endianness', 'l', ...
-    'normalize', false ...
-  );
-  
-% end get_default_options()

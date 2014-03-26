@@ -30,7 +30,7 @@ function [images, names, full_names] = ReadImagesFromDirectory(directory_name, .
 
   % Use default options for image reading.
   if(~exist('options', 'var')), 
-    options = get_default_options();
+    options = ReadImageDefaultOptions();
   end
   
   % Get file names pattern.
@@ -57,16 +57,3 @@ function [images, names, full_names] = ReadImagesFromDirectory(directory_name, .
   end
   
 % end ReadImagesFromDirectory()
-
-
-function default_options = get_default_options()
-  
-  default_options = struct(...
-    'format', 'std', ...
-    'size', [512 512], ...
-    'format_spec', 'uint16', ...
-    'endianness', 'l', ...
-    'normalize', false ...
-  );
-  
-% end get_default_options()
