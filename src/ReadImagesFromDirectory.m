@@ -25,6 +25,7 @@
 %   options.endianness:   Only for 'raw' images. Endianness of the raw formar. Can be 
 %                         either 'l' or 'b', which stands for little-endian and 
 %                         big-endian respectively. Default is 'l'.
+%   options.normalize:    If true, image will be normalized, default is false.
 % 
 % Example.
 %   opts = struct; opts.format = 'std';
@@ -75,7 +76,9 @@ function default_options = get_default_options()
     'format', 'std', ...
     'size', [512 512], ...
     'format_spec', 'uint16', ...
-    'endianness', 'l');
+    'endianness', 'l', ...
+    'normalize', false ...
+  );
   
 % end get_default_options()
 
@@ -86,7 +89,7 @@ function image = read_image(impath, options)
   default_options = get_default_options();
    
   if(~exist('options','var')), 
-    options = default_options; 
+    options = default_options;
   else
     tags = fieldnames(default_options);
     for i = 1 : length(tags)
@@ -100,16 +103,23 @@ function image = read_image(impath, options)
   end
   
   % Depending on the image format, use either a built-in function or the custom one.
+  % Normalize image if requested. Normalization differs for standard and RAW images.
   image = zeros(2, 2);
   switch (options.format)
     case 'std'
       image = imread(impath);
+      if (options.normalize)
+        image = im2double(image);
+      end
       
     case 'raw'
       image = ReadFromRaw(impath, options.size, options.format_spec, options.endianness);
-      
+      if (options.normalize)
+        image = NormalizeImage(image);
+      end
+    
     otherwise
-      warning('ReadImagesFromDirectory:UnsupportedImageType', 'Unsupported image format.');
+      warning('ReadImagesFromDirectory:UnsupportedImageFormat', 'Unsupported image format.');
   end
 
 % end read_image()
