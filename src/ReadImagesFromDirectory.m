@@ -29,7 +29,7 @@ function [images, names, full_names] = ReadImagesFromDirectory(directory_name, .
     img_name_pattern, options)
 
   % Use default options for image reading.
-  if(~exist('options', 'var')), 
+  if (~exist('options', 'var'))
     options = ReadImageDefaultOptions();
   end
   

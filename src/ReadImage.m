@@ -46,16 +46,16 @@ function image = ReadImage(impath, options)
   % Process input options.
   default_options = ReadImageDefaultOptions();
    
-  if(~exist('options','var')), 
+  if (~exist('options','var'))
     options = default_options;
   else
     tags = fieldnames(default_options);
     for i = 1 : length(tags)
-      if(~isfield(options, tags{i}))
+      if (~isfield(options, tags{i}))
         options.(tags{i}) = default_options.(tags{i});
       end
     end
-    if(length(tags) ~= length(fieldnames(options))), 
+    if (length(tags) ~= length(fieldnames(options)))
       warning('ReadImagesFromDirectory:UnknownOption', 'Unknown options found.');
     end
   end
